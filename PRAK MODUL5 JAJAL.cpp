@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int dani1[2][2] = {{1, 2}, {3, 4}};
+    int dani2[2][2] = {{5, 6}, {7, 8}};
+    int hasil[2][2];
+    int i, j;
+
+    // Penjumlahan matriks
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            hasil[i][j] = dani1[i][j] + dani2[i][j];
+        }
+    }
+
+    // Menampilkan hasil penjumlahan matriks
+    printf("Hasil penjumlahan dani:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d ", hasil[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

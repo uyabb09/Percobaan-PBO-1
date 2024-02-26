@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char agent[5][10] = {"neon", "gekko", "omen", "sage", "jett"};
+    int i;
+
+    printf("Daftar Agen:\n");
+    for (i = 0; i < 5; i++) {
+        printf("Agent ke-%d: %s\n", i + 1, agent[i]);
+    }
+
+    // mengubah sage menjadi kage
+    strcpy(agent[3], "kage");
+	
+    printf("\nDaftar Agen setelah perubahan:\n");
+    for (i = 0; i < 5; i++) {
+        printf("Agent ke-%d: %s\n", i + 1, agent[i]);
+    }
+
+    return 0;
+}

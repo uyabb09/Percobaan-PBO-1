@@ -1,0 +1,155 @@
+#include <stdio.h>
+//primt matrix hasil
+void printMatrix(int matrixJ[3][3]){
+  for(int i=0; i < 3; i++){
+    for(int j=0; j<3; j++){
+      printf("%d\t", matrixJ[i][j]);
+    }
+    printf("\n ");
+  }
+}
+//print matrix 1
+void printMatrix1(int matrix1[3][3]){
+  for(int i=0; i < 3; i++){
+    for(int j=0; j<3; j++){
+      printf("%d\t", matrix1[i][j]);
+    }
+    printf("\n ");
+  }
+}
+//matrix 2
+void printMatrix2(int matrix2[3][3]){
+  for(int i=0; i < 3; i++){
+    for(int j=0; j<3; j++){
+      printf("%d\t", matrix2[i][j]);
+    }
+    printf("\n ");
+  }
+}
+
+void penjumlahanMatrix(int matrix1[3][3], int matrix2[3][3], int matrixJ[3][3]){
+  for(int i=0; i < 3; i++){
+    for(int j=0; j<3; j++){
+      matrixJ[i][j] = matrix1[i][j] + matrix2[i][j];
+    }
+  }
+}
+
+void penguranganMatrix(int matrix1[3][3], int matrix2[3][3], int matrixJ[3][3]){
+  for(int i = 0; i < 3; i++){
+    for(int j = 0; j<3; j++){
+      matrixJ[i][j] = matrix1[i][j] - matrix2[i][j];
+    }
+  }
+}
+
+void perkalianMatrix(int matrix1[3][3], int matrix2[3][3], int matrixJ[3][3]){
+  for(int i = 0; i < 3; i++){
+    for(int j = 0; j<3; j++){
+      matrixJ[i][j] = 0;
+      for(int k = 0; k < 3; k++){
+        matrixJ[i][j] += matrix1[i][k] * matrix2[k][j];
+      }
+      
+    }
+  }
+}
+//badan utama
+int main() {
+
+  int x[9],n;
+  int matrix1[3][3];
+  int matrix2[3][3];
+  int matrixJ[3][3];
+
+  printf("=== Operasi Matrix ===\n");
+  printf("1. Penjumlahan\n");
+  printf("2. Pengurangan\n");
+  printf("3. Perkalian\n");
+  printf("Pilih salah satu(1/2/3):");
+  scanf("%d", &n);
+  
+    switch(n){
+    case 1:
+      printf("Masukkan elemen matriks pertama (3x3):\n");
+  for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+          printf("");
+          scanf("%d", &matrix1[i][j]);
+      }
+  }
+
+  printf("Masukkan elemen matriks kedua (3x3):\n");
+  for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+          printf("");
+          scanf("%d", &matrix2[i][j]);
+      }
+  }
+    printf("Matrix Pertama:\n");
+    printMatrix(matrix1);
+    printf("Matrix Kedua:\n");
+    printMatrix(matrix2);
+    printf("Hasil Penjumlahan:\n");
+    penjumlahanMatrix(matrix1, matrix2, matrixJ);
+    printMatrix(matrixJ);
+    break;
+
+    case 2:
+      printf("Masukkan elemen matriks pertama (3x3):\n");
+  for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+          printf("");
+          scanf("%d", &matrix1[i][j]);
+      }
+  }
+
+  printf("Masukkan elemen matriks kedua (3x3):\n");
+  for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+          printf("");
+          scanf("%d", &matrix2[i][j]);
+      }
+  }
+    printf("Matrix Pertama:\n");
+    printMatrix(matrix1);
+    printf("Matrix Kedua:\n");
+    printMatrix(matrix2);
+    printf("Hasil Pengurangan:\n");
+    penguranganMatrix(matrix1, matrix2, matrixJ);
+    printMatrix(matrixJ);
+    break;
+
+    case 3:
+    	  printf("Masukkan elemen matriks pertama (3x3):\n");
+  for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+          printf("");
+          scanf("%d", &matrix1[i][j]);
+      }
+  }
+
+  printf("Masukkan elemen matriks kedua (3x3):\n");
+  for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+          printf("");
+          scanf("%d", &matrix2[i][j]);
+      }
+  }
+    printf("Matrix Pertama:\n");
+    printMatrix(matrix1);
+    printf("Matrix Kedua:\n");
+    printMatrix(matrix2);
+    printf("Hasil Perkalian:\n");
+    perkalianMatrix(matrix1, matrix2, matrixJ);
+    printMatrix(matrixJ);
+    break;
+
+    default:
+    printf("INPUTAN TIDAK VALID");
+    break;
+  }
+  
+  
+  return 0;
+}
